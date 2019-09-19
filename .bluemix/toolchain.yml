@@ -82,5 +82,3 @@ form:
     parameters:
       repo_name: 'app-{{toolchain.name}}'
       repo_url: 'https://github.com/open-toolchain/dev-simple-app.git'
-    schema:
-      $ref: hostedgit_customization.json
