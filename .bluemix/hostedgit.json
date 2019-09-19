@@ -11,7 +11,7 @@
         "repo_url": {
             "type": "string"
         },
-        "type": {
+        "starter_type": {
             "title": "Repository type",
             "type": "string",
             "enum": [
@@ -29,7 +29,7 @@
          }, 
          {
             "type": "selectfieldset",
-            "key": "type",
+            "key": "starter_type",
             "titleMap": {
                "repo": "Repository",
                "starterkit": "Starter Kit"
