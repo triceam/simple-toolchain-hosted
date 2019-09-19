@@ -1,0 +1,68 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Microservices deployment stage",
+    "description": "Feb Demo Microservices GitHub Schema",
+    "longDescription": "With GitHub, you can store your source code in a new or an existing GitHub repository.",
+    "type": "object",
+    "properties": {
+        "repo_name": {
+            "type": "string"
+        },
+        "repo_url": {
+            "type": "string"
+        },
+        "type": {
+            "title": "Repository type",
+            "type": "string",
+            "enum": [
+               "repo",
+               "starterkit"
+            ]
+         }
+    },
+    "required": ["repo_name", "repo_url"],
+    "form": [
+        {
+            "title": "New repository name",
+            "type": "string",
+            "key": "repo_name"
+         }, 
+         {
+            "type": "selectfieldset",
+            "key": "type",
+            "titleMap": {
+               "repo": "Repository",
+               "starterkit": "Starter Kit"
+            },
+            "items": [
+               {
+                  "type": "section",
+                  "description": "Enter the git repository",
+                  "items": [
+                     {
+                        "type": "select",
+                        "key": "repo_url",
+                        "readonly": false
+                    },
+                 "enable_traceability"
+                  ]
+               }, 
+               {
+                  "type": "section",
+                  "description": "Clone the repository that is specified in the Source repository URL field.",
+                  "items": [
+                     "repo_name", 
+                     {
+                    "type": "string",
+                    "key": "repo_url",
+                    "readonly": false
+                 },
+                 "private_repo",
+                 "has_issues",
+                 "enable_traceability"
+                  ]
+              }
+           ]
+        }
+    ] 
+}
